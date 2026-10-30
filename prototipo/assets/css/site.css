@@ -326,20 +326,11 @@ a.board__tile:focus-visible { outline: 3px solid var(--red); outline-offset: 3px
 @media (max-width: 36rem) { .board { grid-template-columns: 1fr; } .board__tile { --h: 8.5rem; } .board__lead { --h: 11rem; } }
 
 /* ---------- CTA band (one word is the button) ---------- */
-.cta-band { --h: max(26rem, 60svh); display: block; position: relative; min-height: var(--h); padding: clamp(1.5rem, 3vw, 2.5rem) var(--margin) 0 calc(var(--h) * var(--tan) + var(--margin)); background: var(--red); color: var(--paper); text-decoration: none; overflow: hidden; }
-.cta-band__inner { max-width: 1760px; margin-inline: auto; display: grid; grid-template-rows: auto 1fr; min-height: calc(var(--h) - clamp(1.5rem, 3vw, 2.5rem)); }
-.cta-band__top { display: flex; justify-content: space-between; gap: 2rem; align-items: start; }
-.cta-band__top p { font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem); max-width: 34ch; line-height: 1.4; }
-.cta-band__arrow { width: clamp(2rem, 4vw, 3rem); height: auto; flex: none; transition: transform 260ms var(--ease-out); }
-.cta-band__word { align-self: end; display: block; font-size: min(18.5vw, 19rem); font-weight: 800; font-style: italic; text-transform: uppercase; line-height: 0.8; letter-spacing: -0.035em; margin-bottom: -0.035em; white-space: nowrap; }
-.cta-band:focus-visible { outline: 4px solid var(--ink); outline-offset: -10px; }
-.cta-band:hover, .cta-band:focus-visible { background: var(--ink); color: var(--paper); }
-.cta-band:hover .cta-band__word, .cta-band:focus-visible .cta-band__word { color: var(--red); }
-.cta-band:hover .cta-band__arrow { transform: translate(4px, -4px); }
-@media (max-width: 56rem) {
-  .cta-band { --h: 46svh; min-height: max(20rem, 46svh); }
-  .cta-band__word { font-size: 18vw; }
-}
+.cta-band { padding-block: clamp(3rem, 6vw, 5rem); }
+.cta-band__block { --h: 20rem; --cut: calc(var(--h) * var(--tan)); height: var(--h); max-width: 62rem; margin-inline: auto; display: grid; place-content: center; justify-items: center; gap: 1.25rem; padding-inline: calc(var(--cut) * 0.6 + 1.5rem); background: var(--red); color: var(--paper); text-align: center; clip-path: polygon(var(--cut) 0, 100% 0, calc(100% - var(--cut)) 100%, 0 100%); }
+.cta-band__block h2 { font-size: clamp(2rem, 1.2rem + 2.6vw, 3.5rem); font-weight: 800; font-style: italic; text-transform: uppercase; line-height: 1; letter-spacing: -0.015em; }
+.cta-band__block p { max-width: 36ch; font-size: var(--step-lead); line-height: 1.35; }
+@media (max-width: 40rem) { .cta-band__block { --h: 22rem; padding-inline: calc(var(--cut) * 0.6 + 0.5rem); } .cta-band__block h2 { font-size: 1.75rem; } }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--ink); color: var(--on-dark); padding-top: clamp(4rem, 8vw, 7rem); }

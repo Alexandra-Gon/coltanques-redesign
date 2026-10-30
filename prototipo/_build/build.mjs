@@ -87,12 +87,13 @@ const crumbs = (items) => `
 </nav>`;
 
 const ctaBand = () => `
-<a class="cta-band slant-left" href="cotizar.html" aria-label="Solicitar cotización: cuéntenos qué necesita mover">
-  <span class="cta-band__inner">
-    <span class="cta-band__top"><p>Cuéntenos qué necesita mover y un asesor comercial le enviará una propuesta.</p>${I.arrowUp}</span>
-    <span class="cta-band__word" aria-hidden="true">Cotizar</span>
-  </span>
-</a>`;
+<section class="cta-band frame" aria-labelledby="cta-title">
+  <div class="cta-band__block">
+    <h2 id="cta-title">¿Qué necesita mover?</h2>
+    <p>Cuéntenos y un asesor comercial le enviará una propuesta.</p>
+    <a class="btn btn--paper" href="cotizar.html"><span>Solicitar cotización</span>${I.arrow}</a>
+  </div>
+</section>`;
 
 const footer = () => `
 <footer class="site-footer">
