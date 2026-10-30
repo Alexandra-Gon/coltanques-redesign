@@ -109,6 +109,7 @@ const footer = () => `
           <li><a href="nosotros.html">Nosotros</a></li>
           <li><a href="nosotros.html#historia">Historia</a></li>
           <li><a href="nosotros.html#sostenibilidad">Sostenibilidad</a></li>
+          <li><a href="nosotros.html#gobierno-corporativo">Gobierno corporativo</a></li>
           <li><a href="nosotros.html#trabaja">Trabaja con nosotros</a></li>
         </ul>
       </div>
@@ -121,10 +122,6 @@ const footer = () => `
           <li><a href="${ext("offices")}">Oficinas</a></li>
           <li><a href="${SITE}">Portal clientes</a></li>
         </ul>
-      </div>
-      <div class="footer-col">
-        <h2>Políticas</h2>
-        <ul>${policies.map(([l, r]) => `<li><a href="${ext(r)}">${l}</a></li>`).join("")}</ul>
       </div>
       <div class="footer-col footer-col--contact">
         <h2>Contacto</h2>
@@ -604,6 +601,18 @@ const nosotros = page(
     <div class="impact__more">
       <div data-reveal><h3>Gestión ambiental</h3><p>Reducimos nuestro impacto transformando las dotaciones en desuso en nuevos productos.</p></div>
       <div data-reveal style="--i:1"><h3>Seguridad vial</h3><p>Nuestro <a href="${ext("policiespesv")}">Plan Estratégico de Seguridad Vial</a> cuida a conductores, comunidades y carga.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section frame" id="gobierno-corporativo" aria-labelledby="gov-title">
+  <div class="impact">
+    <div class="impact__head">
+      <h2 class="head" id="gov-title" data-reveal>Gobierno corporativo</h2>
+      <p class="lead" data-reveal style="--i:1">Las políticas con las que Coltanques cumple la ley, protege los datos y opera con ética.</p>
+    </div>
+    <div class="gov">
+      ${policies.map(([g, items], i) => `<div class="gov__group" data-reveal style="--i:${i}"><h3>${g}</h3><ul>${items.map(([l, r]) => `<li><a href="${ext(r)}"><span>${l}</span>${I.ext}</a></li>`).join("")}</ul></div>`).join("")}
     </div>
   </div>
 </section>

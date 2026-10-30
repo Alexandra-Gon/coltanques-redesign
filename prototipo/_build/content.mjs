@@ -147,14 +147,20 @@ export const norms = [
 ];
 
 export const policies = [
-  ["SARLAFT", "policiessarlaft"],
-  ["PTEE", "policiesptee"],
-  ["Protección de datos", "privacepolicy"],
-  ["Aviso de privacidad", "privacynotice"],
-  ["PESV", "policiespesv"],
-  ["Política de seguridad BASC", "policiessecuritybasc"],
-  ["Política de sostenibilidad", "policiessustainability"],
-  ["Derechos humanos y laborales", "policieshumanrights"],
+  ["Ética y cumplimiento", [
+    ["SARLAFT", "policiessarlaft"],
+    ["PTEE", "policiesptee"],
+  ]],
+  ["Datos personales", [
+    ["Protección de datos", "privacepolicy"],
+    ["Aviso de privacidad", "privacynotice"],
+  ]],
+  ["Operación responsable", [
+    ["PESV", "policiespesv"],
+    ["Política de seguridad BASC", "policiessecuritybasc"],
+    ["Política de sostenibilidad", "policiessustainability"],
+    ["Derechos humanos y laborales", "policieshumanrights"],
+  ]],
 ];
 
 const H = (d, n) => Array.from({ length: n }, (_, i) => `assets/img/historia/${d}_${i + 1}.webp`);
