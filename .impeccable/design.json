@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-29T18:00:00-05:00",
+  "title": "Design System: Coltanques",
+  "extensions": {
+    "colorMeta": {
+      "red": { "role": "primary", "displayName": "Rojo Coltanques (185C)", "tonalRamp": ["#4a0010", "#7a0019", "#b00022", "#ea0029", "#ff4d63", "#ff8a99", "#ffc2ca", "#ffe8eb"] },
+      "red-deep": { "role": "primary", "displayName": "Rojo profundo (186C)", "tonalRamp": ["#3f0510", "#6a0a1a", "#9b0c24", "#ce0e2d", "#e54a60", "#ef8291", "#f7bcc4", "#fde7ea"] },
+      "ink": { "role": "neutral", "displayName": "Tinta (Black 6C)", "tonalRamp": ["#05080b", "#101820", "#2a333d", "#4a515a", "#6f767f", "#9aa1a9", "#c3c8ce", "#e3e5e9"] },
+      "paper": { "role": "neutral", "displayName": "Papel" },
+      "tone": { "role": "neutral", "displayName": "Tono" },
+      "tone-2": { "role": "neutral", "displayName": "Tono 2" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "h1 de cada página, Jost 800 oblicua en mayúsculas." },
+      "head": { "displayName": "Head", "purpose": "h2 de sección." },
+      "lead": { "displayName": "Lead", "purpose": "Frase de apoyo bajo el titular." }
+    },
+    "shadows": [
+      { "name": "sticky-header", "value": "0 6px 24px -12px rgb(16 24 32 / 0.28)", "purpose": "Solo el header fijo cuando el contenido pasa por debajo." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Entradas, hovers y prensado." },
+      { "name": "ease-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Entrada del paralelogramo del hero." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.76, 0, 0.24, 1)", "purpose": "Barrido diagonal de fotografías." },
+      { "name": "crossfade", "value": "1600ms ease, 5.6s hold", "purpose": "Fundido lento de fotos en la cabecera de Nosotros." }
+    ],
+    "breakpoints": [
+      { "name": "stack", "value": "56rem" },
+      { "name": "menu", "value": "68rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal: cotizar o ver un servicio. Rectángulo inclinado 12°.",
+      "html": "<a class=\"ds-btn\" href=\"#\"><span>Solicitar cotización</span><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: .6em; min-height: 3.25rem; padding: 0 1.9rem; background: #ea0029; color: #fff; font: 600 17px Jost, Futura, sans-serif; text-decoration: none; transform: skewX(-12deg); transition: transform 140ms cubic-bezier(.22,1,.36,1), background-color 180ms ease; } .ds-btn > * { transform: skewX(12deg); } .ds-btn:hover { background: #ce0e2d; } .ds-btn:active { transform: skewX(-12deg) scale(.97); } .ds-btn:focus-visible { outline: 3px solid #101820; outline-offset: 3px; }"
+    },
+    {
+      "name": "Botón tinta",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Variante sobre fondos claros cuando el rojo ya ocupa el campo.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\"><span>Ver servicio</span></a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; min-height: 3.25rem; padding: 0 1.9rem; background: #101820; color: #fff; font: 600 17px Jost, Futura, sans-serif; text-decoration: none; transform: skewX(-12deg); } .ds-btn-ink > * { transform: skewX(12deg); } .ds-btn-ink:hover { background: #2a333d; } .ds-btn-ink:focus-visible { outline: 3px solid #ea0029; outline-offset: 3px; }"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo plano en tono, con base que se vuelve roja con el foco.",
+      "html": "<label class=\"ds-label\">Origen<input class=\"ds-input\" placeholder=\"Ciudad o municipio\"></label>",
+      "css": ".ds-label { display: grid; gap: .5rem; font: 600 16px Jost, sans-serif; color: #101820; } .ds-input { min-height: 3.25rem; padding: .75rem 1rem; background: #f1f2f4; border: 0; border-bottom: 3px solid #e3e5e9; font: 400 17px Jost, sans-serif; } .ds-input::placeholder { color: #5f6670; } .ds-input:focus { outline: 2px solid #101820; background: #fff; border-bottom-color: #ea0029; }"
+    },
+    {
+      "name": "Navegación",
+      "kind": "nav",
+      "description": "Enlaces del header con barra roja inclinada en el elemento activo.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Servicios</a><a href=\"#\">Cobertura</a><a href=\"#\">Nosotros</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 2rem; font: 500 17px Jost, sans-serif; } .ds-nav a { position: relative; padding-block: .5rem; color: #101820; text-decoration: none; } .ds-nav a::after { content: \"\"; position: absolute; left: 0; right: 0; bottom: .1rem; height: 3px; background: #ea0029; transform: skewX(-12deg) scaleX(0); transform-origin: left; transition: transform 240ms cubic-bezier(.22,1,.36,1); } .ds-nav a:hover::after, .ds-nav a[aria-current]::after { transform: skewX(-12deg) scaleX(1); }"
+    },
+    {
+      "name": "Mosaico inclinado",
+      "kind": "card",
+      "description": "Cifra o norma en un paralelogramo de 12°; el corte depende de la altura.",
+      "html": "<div class=\"ds-tile\"><b>BASC</b><span>Certificación en comercio seguro desde 2003.</span></div>",
+      "css": ".ds-tile { --cut: 2.5rem; height: 12rem; display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; background: #f1f2f4; clip-path: polygon(var(--cut) 0, 100% 0, calc(100% - var(--cut)) 100%, 0 100%); font-family: Jost, sans-serif; } .ds-tile b { padding-left: calc(var(--cut) * .85); font: italic 800 30px Jost, sans-serif; } .ds-tile span { padding-right: calc(var(--cut) * .85); color: #4a515a; font-size: 16px; }"
+    },
+    {
+      "name": "Viñeta inclinada",
+      "kind": "chip",
+      "description": "Marcador de lista a altura de texto, la misma diagonal del logotipo.",
+      "html": "<span class=\"ds-chip\"><i></i>Contenedor</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: .5rem; font: 500 17px Jost, sans-serif; color: #101820; } .ds-chip i { width: .5em; height: .72em; background: #ea0029; transform: skewX(-12deg); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La diagonal de la carretera",
+    "overview": "El sitio toma una sola forma del manual de marca: la inclinación de 12° del logotipo y los cortes diagonales de sus páginas. Esa forma recorta cada fotografía, inclina cada botón, marca cada viñeta y corta los mosaicos y la banda final de cotización. Todo lo demás es recto y plano: suelo blanco, tinta negra #101820 y el rojo de marca en campos enteros.",
+    "keyCharacteristics": [
+      "Un único motivo: el paralelogramo inclinado a 12°, aplicado como clip-path o skewX.",
+      "El rojo en campos grandes (el hero, la cifra principal, la banda de cotizar) y en la acción. Nunca en degradado.",
+      "Esquinas rectas, sin sombras en reposo y sin filetes. Las superficies se separan con un salto de tono.",
+      "Un titular h1 por página, de dos líneas como máximo, y un encabezado en cada sección."
+    ],
+    "rules": [
+      { "name": "The One Red Rule", "body": "El rojo es un campo o una acción, nunca una palabra coloreada dentro de un titular.", "section": "colors" },
+      { "name": "The Two-Line Rule", "body": "Ningún titular pasa de dos líneas en 1440, 768 o 390 px. Primero se cortan palabras; el tamaño se baja solo como último recurso.", "section": "typography" },
+      { "name": "The Parallel Cut Rule", "body": "Los mosaicos contiguos usan el mismo ángulo, así que el hueco de 8 px entre ellos es una diagonal constante.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do recortar las fotografías con el paralelogramo de 12°, o dejarlas rectas cuando sean archivo en tira.",
+      "Do usar el rojo en campos completos y en la acción primaria.",
+      "Do citar la fuente y el año de cada cifra."
+    ],
+    "donts": [
+      "Don't usar degradados, sombras en reposo, filetes finos ni esquinas redondeadas.",
+      "Don't poner etiquetas pequeñas en mayúsculas sobre los titulares, ni numerar secciones 01/02/03.",
+      "Don't deformar, recolorear ni encerrar el logotipo en un contenedor (manual de marca).",
+      "Don't colorear una palabra dentro de un titular."
+    ]
+  }
+}
