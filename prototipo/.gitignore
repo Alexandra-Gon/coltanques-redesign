@@ -1,5 +1,3 @@
 .agents/
 .taste-skill/
 .env
-# Páginas generadas por _build/build.mjs
-/*.html
